@@ -36,7 +36,7 @@ Mevcut Durum:
    - Footer kısmında yorumlar bulunabilir.
 
 5. Proje Yapısı:
-
+```
    2_Hafta
    ├── static/
    │   ├── css/
@@ -72,7 +72,7 @@ Mevcut Durum:
    │   ├── skyrimmods.html
    │   └── warbandmods.html
    └── app.py   
-
+```
 6. Şu Anda:
    - Platformda 4 oyun için sadece 1 mod eklenmiştir.
 
