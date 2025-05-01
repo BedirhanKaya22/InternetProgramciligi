@@ -35,14 +35,52 @@ Mevcut Durum:
    - Ayrıca açıklamalar, kurulum talimatları ve gereksinimler gibi bilgiler de yer alır.
    - Footer kısmında yorumlar bulunabilir.
 
-5. Şu Anda:
+5. Proje Yapısı:
+
+   2_Hafta
+   ├── static/
+   │   ├── css/
+   │   │   ├── base.css
+   │   │   ├── destek.css
+   │   │   └── mod_sayfa_1.css
+   │   ├── images/
+   │   │   ├── bannerlord.jpeg
+   │   │   ├── fallout4.jpg
+   │   │   ├── floris.png
+   │   │   ├── Immersive_Armors.png
+   │   │   ├── Minimal_Hud.png
+   │   │   ├── Mod_Eklenecek.png
+   │   │   ├── Realm.png
+   │   │   ├── Skyrim_Anniversary_Edition.jpeg
+   │   │   ├── Skyrim_Resim.png
+   │   │   └── Warband.jpeg
+   │   └── music/
+   │       └── Adaption.mp3
+   ├── templates/
+   │   ├── admin.html
+   │   ├── bannerlordmods.html
+   │   ├── base.html
+   │   ├── destek.html
+   │   ├── fallout4mods.html
+   │   ├── index.html
+   │   ├── login.html
+   │   ├── mod_sayfa_1.html
+   │   ├── mod_sayfa_2.html
+   │   ├── mod_sayfa_3.html
+   │   ├── mod_sayfa_4.html
+   │   ├── register.html
+   │   ├── skyrimmods.html
+   │   └── warbandmods.html
+   └── app.py   
+
+6. Şu Anda:
    - Platformda 4 oyun için sadece 1 mod eklenmiştir.
 
 ---
 
 Gelecek Planlama:
 
-1. Destek Paneli:
+7. Destek Paneli:
    - Destek paneli, ayrı bir sayfa yerine sağ altta açılabilir bir pencere tasarımında olacak.
    - Kullanıcılar bu panel üzerinden sorunlarını bildirebilecek ve cevap alabilecek.
    - Her giriş yapan üye, kendi profilini görüntüleyebilecek, mod yükleyebilecek, profillerini düzenleyebilecek, favori modlarını görüntüleyebilecek ve açtıkları destek panellerini ve yaptıkları yorumları inceleyebilecek.
