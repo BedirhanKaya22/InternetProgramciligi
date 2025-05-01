@@ -37,7 +37,7 @@ Mevcut Durum:
 
 5. Proje Yapısı:
 ```
-   2_Hafta
+   1_Hafta
    ├── static/
    │   ├── css/
    │   │   ├── base.css
