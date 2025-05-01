@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-8 offset-md-2 text-center">
+    <h1 class="display-4 mb-4">ModHub`a hoşgeldiniz</h1>
+    <p class="lead mb-4">Aşağıdan oyununuzu seçiniz ve mod içeriklerine bakınız.</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <a href="/register" class="btn btn-primary btn-lg px-4 gap-3">Kayıt Ol</a>
+      <a href="/login" class="btn btn-outline-secondary btn-lg px-4">Giriş Yap</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="row mt-5">
+
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header bg-dark text-white">
+        <h5 class="mb-0">Skyrim Anniversary Edition</h5>
+      </div>
+      <img src="{{ url_for('static', filename='images/Skyrim_Anniversary_Edition.jpeg') }}" class="card-img-top" alt="Skyrim Mod">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <small class="text-aciklama">Yapımcı:Bethesda</small>
+          <a href="{{ url_for('skyrim_modsayfa') }}" class="btn btn-sm btn-primary"><i class="bi bi-box-arrow-in-left"></i> Giriş</a>
+        </div>
+      </div>
+      <div class="card-footer">
+        <small><i class="bi bi-heart-fill text-danger"></i> 2.3K Beğeni</small>
+        <small><i class="bi bi-arrow-down-circle"></i>1.500 İndirilme</small>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header bg-dark text-white">
+        <h5 class="mb-0">Fallout 4</h5>
+      </div>
+      <img src="{{ url_for('static', filename='images/Fallout4.jpg') }}" class="card-img-top" alt="Fallout 4 Mod">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <small class="text-aciklama">Yapımcı:Bethesda</small>
+          <a href="{{ url_for('fallout_modsayfa') }}" class="btn btn-sm btn-primary"><i class="bi bi-box-arrow-in-left"></i> Giriş</a>
+        </div>
+      </div>
+      <div class="card-footer">
+        <small><i class="bi bi-heart-fill text-danger"></i> 2.3K Beğeni</small>
+        <small><i class="bi bi-arrow-down-circle"></i>1.500 İndirilme</small>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header bg-dark text-white">
+        <h5 class="mb-0">Bannerlord</h5>
+      </div>
+      <img src="{{ url_for('static', filename='images/Bannerlord.jpeg') }}" class="card-img-top" alt="Bannerlord Mod">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <small class="text-aciklama">Yapımcı:TaleWorlds</small>
+          <a href="{{ url_for('bannerlord_modsayfa') }}" class="btn btn-sm btn-primary"><i class="bi bi-box-arrow-in-left"></i> Giriş</a>
+        </div>
+      </div>
+      <div class="card-footer">
+        <small><i class="bi bi-heart-fill text-danger"></i> 2.3K Beğeni</small>
+        <small><i class="bi bi-arrow-down-circle"></i>1.500 İndirilme</small>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4 mt-4">
+    <div class="card">
+      <div class="card-header bg-dark text-white">
+        <h5 class="mb-0">Warband</h5>
+      </div>
+      <img src="{{ url_for('static', filename='images/Warband.jpeg') }}" class="card-img-top" alt="Warband Mod">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <small class="text-aciklama">Yapımcı:TaleWorlds</small>
+          <a href="{{ url_for('warband_modsayfa') }}" class="btn btn-sm btn-primary"><i class="bi bi-box-arrow-in-left"></i> İndir</a>
+        </div>
+      </div>
+      <div class="card-footer">
+        <small><i class="bi bi-heart-fill text-danger"></i> 2.3K Beğeni</small>
+        <small><i class="bi bi-arrow-down-circle"></i>1.500 İndirilme</small>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
