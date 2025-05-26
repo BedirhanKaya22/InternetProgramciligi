@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mod_sayfa_1.css') }}">
+</head>
+
+<div class="mb-3">
+    <a href="javascript:history.back()" class="btn btn-secondary">
+      <i class="bi bi-arrow-left"></i> Geri Dön
+    </a>
+  </div>
+
+<div class="container mt-5">
+
+  <h1 class="mb-3">Mod Adı: <strong>Minimal HUD</strong></h1>
+
+
+  <div class="row">
+
+    <div class="col-md-4">
+      <img src="{{ url_for('static', filename='images/Minimal_Hud.png') }}" class="img-fluid rounded shadow" alt="Mod resmi">
+    </div>
+
+    <div class="col-md-8">
+      <ul class="list-group mb-3 kenarlik li">
+        <li class="list-group-item"><strong>Yazar:</strong> <a href="#">Bilinmiyor</a></li>
+        <li class="list-group-item"><strong>Yüklenme Tarihi:</strong> 3 Haziran 2025</li>
+        <li class="list-group-item"><strong>Sürüm:</strong> 1.0</li>
+        <li class="list-group-item"><strong>Kategori:</strong> Zırhlar</li>
+        <li class="list-group-item"><strong class="bi bi-arrow-down-circle"> İndirme Sayısı: </strong> 75.000+</li>
+        <li class="list-group-item"><strong class="bi bi-heart-fill"> Begenilme Sayısı: </strong> 2.300</li>
+      </ul>
+
+      <div class="d-flex gap-2">
+        <button class="btn btn-primary">İndir</button>
+        <button class="btn btn-outline-secondary">Favorilere Ekle</button>
+        <button class="btn btn-outline-success">Yorum Yap</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <h3>Açıklama</h3>
+    <p>
+      Temiz DEF_HUD ön ayarı, görsel ayak izlerini en aza indirecek şekilde konumlandırılmış daha küçük kullanıcı arayüzü öğeleriyle karakterize edilir.
+      Nişangah, isabet işaretçisi ve mühimmat sayacı görünürlüğüyle ilgili seçeneklere sahip birden fazla sürüm de mevcuttur
+    </p>
+  </div>
+
+  <div class="mt-4">
+    <h4>Kurulum Talimatları</h4>
+    <p>Mod yöneticinizle kolayca kurabilirsiniz. Manuel kurulum için ZIP dosyasını indirin ve 'Data' klasörüne çıkarın.</p>
+  </div>
+
+  <div class="mt-4">
+    <h4>Gereksinimler</h4>
+    <ul>
+      <li>Gereksinim Yok</li>
+    </ul>
+  </div>
+</div>
+
+    <div class="mt-4">
+        <h5>Yorumlar</h5>
+
+        <div class="mb-3">
+          <div class="border rounded p-2 mb-2 bg-dark">
+            <strong>Ahmet:</strong> Harika mod! Tavsiye ederim.
+          </div>
+          <div class="border rounded p-2 mb-2 bg-dark">
+            <strong>Zeynep:</strong> Fallout4'e çok güzel bir hava kattı.
+          </div>
+        </div>
+
+        <form>
+          <div class="mb-2">
+            <input type="text" class="form-control" placeholder="Adınız">
+          </div>
+          <div class="mb-2">
+            <textarea class="form-control" rows="2" placeholder="Yorumunuzu yazın..."></textarea>
+          </div>
+          <button class="btn btn-success btn-sm">Yorum Gönder</button>
+        </form>
+    </div>
+
+{% endblock %}

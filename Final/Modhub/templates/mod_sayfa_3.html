@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mod_sayfa_1.css') }}">
+</head>
+
+<div class="mb-3">
+    <a href="javascript:history.back()" class="btn btn-secondary">
+      <i class="bi bi-arrow-left"></i> Geri Dön
+    </a>
+  </div>
+
+<div class="container mt-5">
+
+  <h1 class="mb-3">Mod Adı: <strong>Realm Divided</strong></h1>
+
+
+  <div class="row">
+
+    <div class="col-md-4">
+      <img src="{{ url_for('static', filename='images/Realm.png') }}" class="img-fluid rounded shadow" alt="Mod resmi">
+    </div>
+
+    <div class="col-md-8">
+      <ul class="list-group mb-3 kenarlik li">
+        <li class="list-group-item"><strong>Yazar:</strong> <a href="#">Bilinmiyor</a></li>
+        <li class="list-group-item"><strong>Yüklenme Tarihi:</strong> 3 Haziran 2025</li>
+        <li class="list-group-item"><strong>Sürüm:</strong> 1.0</li>
+        <li class="list-group-item"><strong>Kategori:</strong> Zırhlar</li>
+        <li class="list-group-item"><strong class="bi bi-arrow-down-circle"> İndirme Sayısı: </strong> 75.000+</li>
+        <li class="list-group-item"><strong class="bi bi-heart-fill"> Begenilme Sayısı: </strong> 2.300</li>
+      </ul>
+
+      <div class="d-flex gap-2">
+        <button class="btn btn-primary">İndir</button>
+        <button class="btn btn-outline-secondary">Favorilere Ekle</button>
+        <button class="btn btn-outline-success">Yorum Yap</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <h3>Açıklama</h3>
+    <p>
+      Bu, Bölünmüş Bölge - Kültür Genişletme XML dosyalarını düzelterek çeviriyi etkinleştiren bir yamadır. Diyar Bölünmüş
+      - Kültür Genişletmesi
+    </p>
+  </div>
+
+  <div class="mt-4">
+    <h4>Kurulum Talimatları</h4>
+    <p>Modları yüklemek için Mod Organizer 2'yi kullanmanızı öneririm ve Vortex'i kullanmanızı kesinlikle önermiyorum ; manuel kurulum daha iyi olur.</p>
+    <ul>
+      <li>Orijinal modu kurun ; ayrıca Harmony'yi de kurmanız gerekiyor .</li>
+      <li>Bu modu indirin ve sıkıştırılmış dosyayı açın ve klasörü orijinal modla üzerine yazın, sürümün tutarlı olduğundan emin olun. Tutarlı olmayan bir sürüm potansiyel olarak sorunlara neden olur</li>
+      <li>Gerekirse kendi dilinize çevirin </li>
+      <li>Yeni kampanyayı veya sandbox oyununu başlatın</li>
+    </ul>
+  </div>
+
+  <div class="mt-4">
+    <h4>Gereksinimler</h4>
+    <ul>
+      <li>Gereksinim Yok</li>
+    </ul>
+  </div>
+</div>
+
+    <div class="mt-4">
+        <h5>Yorumlar</h5>
+
+        <div class="mb-3">
+          <div class="border rounded p-2 mb-2 bg-dark">
+            <strong>Ahmet:</strong> Harika mod! Tavsiye ederim.
+          </div>
+          <div class="border rounded p-2 mb-2 bg-dark">
+            <strong>Zeynep:</strong> Bannerlord'e çok güzel bir hava kattı.
+          </div>
+        </div>
+
+        <form>
+          <div class="mb-2">
+            <input type="text" class="form-control" placeholder="Adınız">
+          </div>
+          <div class="mb-2">
+            <textarea class="form-control" rows="2" placeholder="Yorumunuzu yazın..."></textarea>
+          </div>
+          <button class="btn btn-success btn-sm">Yorum Gönder</button>
+        </form>
+    </div>
+
+{% endblock %}

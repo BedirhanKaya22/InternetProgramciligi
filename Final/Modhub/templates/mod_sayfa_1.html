@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mod_sayfa_1.css') }}">
+</head>
+
+<div class="mb-3">
+    <a href="javascript:history.back()" class="btn btn-secondary">
+      <i class="bi bi-arrow-left"></i> Geri Dön
+    </a>
+</div>
+
+<div class="container mt-5">
+
+  <h1 class="mb-3">Mod Adı: <strong>Immersive Armors SE</strong></h1>
+
+  <div class="row">
+
+    <div class="col-md-4">
+      <img src="{{ url_for('static', filename='images/Immersive_Armors.png') }}" class="img-fluid rounded shadow" alt="Mod resmi">
+    </div>
+
+    <div class="col-md-8">
+      <ul class="list-group mb-3 kenarlik li">
+        <li class="list-group-item"><strong>Yazar:</strong> <a href="#">Bilinmiyor</a></li>
+        <li class="list-group-item"><strong>Yüklenme Tarihi:</strong> 3 Haziran 2025</li>
+        <li class="list-group-item"><strong>Sürüm:</strong> 1.0</li>
+        <li class="list-group-item"><strong>Kategori:</strong> Zırhlar</li>
+        <li class="list-group-item"><strong class="bi bi-arrow-down-circle"> İndirme Sayısı: </strong> 75.000+</li>
+        <li class="list-group-item"><strong class="bi bi-heart-fill"> Begenilme Sayısı: </strong> 2.300</li>
+      </ul>
+
+      <div class="d-flex gap-2">
+        <button class="btn btn-primary">İndir</button>
+        
+        <!-- Favorilere ekleme ve çıkarma butonu -->
+        <button class="btn btn-outline-secondary" id="favorite-btn">
+          {% if current_user.is_authenticated and mod_is_favorited %}
+            Favorilerden Çıkar
+          {% elif current_user.is_authenticated %}
+            Favorilere Ekle
+          {% else %}
+            Giriş Yapın
+          {% endif %}
+        </button>
+
+        <!-- Yorum yapma butonu -->
+        {% if current_user.is_authenticated %}
+          <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#commentModal">Yorum Yap</button>
+        {% else %}
+          <button class="btn btn-outline-success" disabled>Yorum Yapmak İçin Giriş Yapın</button>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <h3>Açıklama</h3>
+    <p>
+      Immersive Armors SE, oyuna çok sayıda yüksek kaliteli zırh ekleyen bir moddur. Her zırh dengeli, oyuna entegre
+      edilmiş ve dünya atmosferine uygundur. Bu mod, karakter özelleştirmesini geliştirir ve rol yapma deneyimini zenginleştirir.
+    </p>
+  </div>
+
+  <div class="mt-4">
+    <h4>Kurulum Talimatları</h4>
+    <p>Mod yöneticinizle kolayca kurabilirsiniz. Manuel kurulum için ZIP dosyasını indirin ve 'Data' klasörüne çıkarın.</p>
+  </div>
+
+  <div class="mt-4">
+    <h4>Gereksinimler</h4>
+    <ul>
+      <li>Skyrim Special Edition 1.6+</li>
+      <li>SKSE (opsiyonel)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Yorumlar Bölümü -->
+<div class="mt-4">
+  <h5>Yorumlar</h5>
+
+  <div class="mb-3">
+    <!-- Kullanıcı yorumları burada dinamik olarak listelenir -->
+    {% for comment in comments %}
+      <div class="border rounded p-2 mb-2 bg-dark">
+        <strong>{{ comment.user.name }}:</strong> {{ comment.text }}
+      </div>
+    {% else %}
+      <p>Henüz yorum yapılmamış.</p>
+    {% endfor %}
+  </div>
+
+  <!-- Yorum formu -->
+  {% if current_user.is_authenticated %}
+    <form method="POST" action="{{ url_for('add_comment', mod_id=mod.id) }}">
+      <div class="mb-2">
+        <textarea class="form-control" rows="2" placeholder="Yorumunuzu yazın..." name="comment" required></textarea>
+      </div>
+      <button class="btn btn-success btn-sm">Yorum Gönder</button>
+    </form>
+  {% else %}
+    <p>Yorum yapabilmek için lütfen <a href="{{ url_for('login') }}">giriş yapın</a>.</p>
+  {% endif %}
+</div>
+
+{% endblock %}
