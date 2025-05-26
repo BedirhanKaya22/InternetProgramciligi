@@ -1,0 +1,96 @@
+body {
+    background-color: #1e1e1e;
+    color: #ddd;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar {
+    background-color: #2c2c2c;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #ffa500 !important; 
+}
+
+.nav-link {
+    color: #ccc !important;
+}
+
+.nav-link:hover {
+    color: #ffa500 !important;
+}
+
+.auth-buttons .btn-outline-light {
+    border-color: #ffa500;
+    color: #ffa500;
+}
+
+.auth-buttons .btn-outline-light:hover {
+    background-color: #ffa500;
+    color: #1e1e1e;
+}
+
+.auth-buttons .btn-light {
+    background-color: #ffa500;
+    color: #1e1e1e;
+}
+
+.card {
+    background-color: #2c2c2c;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card-header {
+    background-color: #3b3b3b;
+    color: #fff;
+    font-weight: bold;
+    border-bottom: none;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.card-text,
+.card-footer,
+.text-muted {
+    color: #bbb !important;
+}
+
+.btn-primary {
+    background-color: #ffa500;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #e69500;
+}
+
+.btn-outline-secondary {
+    color: #ccc;
+    border-color: #555;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+.form-label,
+.text-center{
+    color: white;
+}
+.text-aciklama{
+    color: white;
+}
+.btn-secondary{
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
