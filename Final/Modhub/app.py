@@ -178,10 +178,10 @@ def mod_sayfa_7():
 def mod_sayfa_8():
     return render_template('mod_sayfa_8.html')  # Yeni mod sayfası
 
-if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()  # Database tablolarını oluştur
-    app.run(debug=True)
+#if __name__ == '__main__':
+#    with app.app_context():
+ #       db.create_all()  # Database tablolarını oluştur
+  #  app.run(debug=True)
 
 import os
 if __name__ == "__main__":
