@@ -7,14 +7,14 @@ from werkzeug.utils import secure_filename
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'gelistirme_anahtari'  # Session bilgilerini tarayıcıda tutmak için
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'  # Database adı
+app.config['SECRET_KEY'] = 'gelistirme_anahtari'  
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'  
 db = SQLAlchemy(app)
 
 login_manager = LoginManager(app)
-login_manager.login_view = 'login'  # Gerektiği sayfaya yönlendirmek için
+login_manager.login_view = 'login'
 
-# User Model
+
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
@@ -25,13 +25,13 @@ class User(UserMixin, db.Model):
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-# SupportTicket Model
+
 class SupportTicket(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, nullable=False)  # Kullanıcıya ait destek biletlerini ilişkilendirir
+    user_id = db.Column(db.Integer, nullable=False) 
     subject = db.Column(db.String(200), nullable=False)
     message = db.Column(db.Text, nullable=False)
-    status = db.Column(db.String(50), default='open')  # Bilet durumu (açık, kapalı vb.)
+    status = db.Column(db.String(50), default='open') 
 
 @app.route('/')
 def index():
@@ -78,7 +78,7 @@ def dashboard():
         message = request.form['message']
         user_id = current_user.id
 
-        # Yeni destek talebini veritabanına ekle
+       
         ticket = SupportTicket(subject=subject, message=message, user_id=user_id)
         db.session.add(ticket)
         db.session.commit()
@@ -86,7 +86,6 @@ def dashboard():
         flash('Destek talebiniz başarıyla gönderildi!', 'success')
         return redirect(url_for('dashboard'))
 
-    # Kullanıcıya ait destek taleplerini çek
     support_tickets = SupportTicket.query.filter_by(user_id=current_user.id).all()
     return render_template('dashboard.html', support_tickets=support_tickets)
 
@@ -96,22 +95,22 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
-# Destek Sayfası
+
 @app.route('/destek', methods=['GET', 'POST'])
 @login_required
 def destek():
     if request.method == 'POST':
         subject = request.form['subject']
         message = request.form['message']
-        user_id = current_user.id  # Kullanıcının id'si
+        user_id = current_user.id  
 
-        # Yeni destek bileti oluştur
+       
         ticket = SupportTicket(subject=subject, message=message, user_id=user_id)
         db.session.add(ticket)
         db.session.commit()
 
         flash('Destek biletiniz başarıyla gönderildi!', 'success')
-        return redirect(url_for('destek'))  # Aynı sayfaya yönlendirme
+        return redirect(url_for('destek')) 
 
     return render_template('destek.html')
 
@@ -183,3 +182,7 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()  # Database tablolarını oluştur
     app.run(debug=True)
+
+import os
+if __name__ == "__main__":
+    app.run(host"0.0.0.0", port=int(os.environ.get("PORT", 5000)))
