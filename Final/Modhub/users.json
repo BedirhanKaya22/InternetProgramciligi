@@ -1,0 +1,8 @@
+[
+    {
+        "id": 1,
+        "name": "Bedirhan",
+        "email": "kayabedirhan22@hotmail.com",
+        "password": "pbkdf2:sha256:1000000$zBcE2mtClZydJ3Yb$c400d21680585fa68089d0c194423768bdb6ba86494eecc93581d235f756a75d"
+    }
+]
